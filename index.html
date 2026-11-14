@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MTG Print Conversor | Personalize seus printings</title>
+<meta name="description" content="Escolha coleções de Magic: The Gathering por prioridade e converta automaticamente os printings da sua decklist. Grátis, PT/EN e sem login.">
+<meta name="theme-color" content="#0c1019">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MTG Print Conversor">
+<meta property="og:description" content="Escolha coleções por prioridade e atualize os printings da sua decklist automaticamente.">
+<meta property="og:image" content="assets/social-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+:root{color-scheme:dark;font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;background:#0c1019;color:#ecf2fa}*{box-sizing:border-box}body{margin:0;padding:30px 16px}main{max-width:1100px;margin:auto}h1{font-size:clamp(1.55rem,3vw,2.1rem);margin:5px 0}h2{font-size:1.08rem;margin:0 0 12px}p{line-height:1.55;color:#aebbd0}a{color:#89c5ff}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.18em;color:#86a6ce;font-weight:700}.panel{border:1px solid #323d51;background:#161e2e;border-radius:16px;padding:20px;margin:18px 0}.row{display:flex;flex-wrap:wrap;gap:16px}.col{flex:1 1 350px;min-width:0}label{display:block;font-weight:650;margin:0 0 8px}.sub{font-size:13px;color:#a7b4c9;margin:3px 0 14px}.priority-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}.priority-item{display:flex;align-items:center;gap:10px;background:#202b3d;border:1px solid #415067;border-radius:10px;padding:9px 10px}.rank{color:#8da4bf;font-size:13px;font-weight:700;min-width:20px}.set-code{font-weight:800;letter-spacing:.06em;min-width:66px}.set-name{color:#9eaec4;font-size:13px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.move-group{display:flex;gap:5px}button{border:0;border-radius:9px;padding:11px 15px;background:#82dfb0;color:#0c281a;font-weight:750;cursor:pointer;font:inherit;font-weight:700}button.secondary{background:#2c3b52;color:#e4ebf4}button.danger{background:#49313b;color:#ffbec7}button.icon-btn{padding:5px 9px;font-size:15px}button:disabled{opacity:.35;cursor:not-allowed}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #84dfb2;outline-offset:2px}.add-row{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:13px}input[type=text]{font:inherit;background:#0e1725;color:#edf3ff;border:1px solid #53647b;border-radius:9px;padding:11px 13px;min-width:110px;width:160px;text-transform:uppercase}.catalog-search{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:16px}.catalog-search input{width:min(100%,440px);flex:1 1 220px;text-transform:none}.catalog-search select{font:inherit;border-radius:9px;padding:11px 12px;background:#0e1725;color:#edf3ff;border:1px solid #53647b}.catalog-info{font-size:13px;color:#a7b4c9;margin:10px 0}.catalog-results{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:8px;max-height:270px;overflow-y:auto;margin-top:10px}.catalog-card{display:flex;gap:8px;align-items:center;background:#202b3d;border:1px solid #415067;border-radius:10px;padding:9px}.catalog-card .card-info{min-width:0;flex:1}.catalog-card .card-name{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.catalog-card .card-meta{font-size:11px;color:#a7b4c9}.catalog-card button{padding:6px 10px;min-width:37px}.sr-only{position:absolute;clip:rect(0,0,0,0);height:1px;width:1px;overflow:hidden}textarea{width:100%;min-height:310px;background:#0b1421;border:1px solid #465770;color:#ebf3ff;border-radius:10px;padding:13px;font:13px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;resize:vertical}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:15px}.status{margin-top:16px;color:#bad7ef;min-height:26px;font-size:14px}.status.error{color:#ff9c9c}.status.success{color:#8cdeb2}.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.stat{padding:10px 13px;border-radius:10px;background:#202b3d;color:#b2c0d2;font-size:13px}.stat b{display:block;color:#eaf5ff;font-size:20px;margin-bottom:2px}details{margin-top:15px}summary{cursor:pointer;color:#cfe1f6}#changes{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.65 ui-monospace,Consolas,monospace;max-height:260px;overflow:auto;color:#b8cbe0;margin-top:12px}small{color:#95a9c0}footer{margin-top:20px;font-size:12px;color:#94a8c2}.spinner{display:inline-block;width:12px;height:12px;border:2px solid #62859e;border-top-color:#82dfb0;border-radius:50%;animation:spin .6s linear infinite;margin-right:7px}@keyframes spin{to{transform:rotate(360deg)}}@media(max-width:560px){body{padding:14px 9px}.panel{padding:13px}.priority-item{gap:6px}.set-code{min-width:48px}.set-name{max-width:90px}button.icon-btn{padding:6px}.col{flex-basis:100%}}
+
+/* Editor de prioridades integrado ao catálogo expansível */
+.section-heading{display:flex;align-items:start;justify-content:space-between;gap:12px;margin-bottom:16px}.section-heading h2{margin-bottom:5px}.section-heading .sub{margin:0}.selected-counter{background:#253449;border:1px solid #3a4a60;border-radius:99px;padding:6px 10px;font-size:12px;font-weight:700;color:#bcd0e4;white-space:nowrap}.priority-panel{padding-bottom:15px}.priority-footer{margin-top:13px}.catalog-disclosure{margin:0;border:1px solid #3f5068;border-radius:12px;overflow:hidden;background:#172235}.catalog-disclosure>summary{display:flex;align-items:center;gap:12px;padding:14px 15px;color:#eef4fb;list-style:none;cursor:pointer;user-select:none}.catalog-disclosure>summary::-webkit-details-marker{display:none}.catalog-disclosure>summary:hover{background:#223149}.catalog-disclosure[open]>summary{background:#223149;border-bottom:1px solid #3f5068}.disclosure-icon{width:33px;height:33px;display:grid;place-items:center;background:#345d55;color:#9be8c4;border-radius:8px;font-size:22px;font-weight:700;flex-shrink:0}.disclosure-heading{flex:1;display:flex;flex-direction:column;gap:3px;min-width:0}.disclosure-heading strong{font-size:14px}.disclosure-heading small{font-size:12px;line-height:1.35}.disclosure-chevron{font-size:22px;color:#adbed2;line-height:1;transition:transform .15s}.catalog-disclosure[open] .disclosure-chevron{transform:rotate(180deg)}.disclosure-content{padding:15px}.disclosure-content .catalog-search{margin-top:0}.disclosure-content .catalog-results{max-height:360px;grid-template-columns:repeat(auto-fill,minmax(225px,1fr))}.catalog-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-top:13px;margin-top:13px;border-top:1px solid #34435a}.catalog-bottom .add-row{margin:0}.catalog-bottom input{width:130px}.footer-tools{display:flex;justify-content:flex-end;padding:8px 2px 0}.text-button{padding:8px;color:#9db1c8;background:transparent;font-size:12px;font-weight:600}.text-button:hover{text-decoration:underline;color:#dbe9f8}.catalog-card{transition:background .12s,border-color .12s}.catalog-card:hover{background:#29384e;border-color:#617793}@media(max-width:560px){.section-heading{flex-wrap:wrap}.catalog-bottom .add-row{width:100%}.catalog-bottom input{flex:1}.catalog-search input{flex-basis:100%}.catalog-search select{flex:1}.disclosure-content{padding:10px}}
+
+/* V5: Selected collection scrolling, empty state, bilingual controls and accessible help. */
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}.lang-controls{display:flex;align-items:center;gap:5px;background:#1c283a;border:1px solid #40516a;padding:4px;border-radius:10px}.lang-controls button{padding:6px 11px;background:transparent;color:#b1c4d9;font-size:13px}.lang-controls button.active{background:#3b536f;color:#fff}.priority-scroll{max-height:254px;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding-right:5px}.priority-list{align-content:start}.empty-state{border:1px dashed #4c6077;background:#1d2a3d;border-radius:11px;padding:22px;text-align:center;color:#c0d1e4}.empty-state strong{display:block;margin-bottom:6px;color:#f1f7ff}.empty-state span{font-size:13px}.help{position:relative;display:inline-flex;vertical-align:middle;align-items:center;justify-content:center;margin-left:7px;width:19px;height:19px;border:0;border-radius:0;font-size:19px;line-height:1;font-style:normal;cursor:help;color:#b6c8de;background:transparent;flex:none}.help:focus-visible{outline:2px solid #82dfb0;outline-offset:3px}.help::after{content:attr(data-tip);display:none;position:absolute;z-index:40;left:0;top:calc(100% + 9px);width:min(310px,75vw);background:#0b1320;color:#edf5ff;border:1px solid #6984a5;box-shadow:0 12px 25px #0009;border-radius:9px;padding:11px 13px;text-align:left;line-height:1.45;white-space:normal;font:normal 12px/1.5 system-ui,sans-serif}.help:hover::after,.help:focus::after{display:block}.with-help{display:flex;gap:4px;align-items:center;flex-wrap:wrap}.catalog-disclosure>summary .help{margin-left:0}.catalog-disclosure>summary .help::after{left:auto;right:0}.priority-item{min-height:48px}.selected-counter{align-self:start}@media(max-width:560px){.topbar{align-items:flex-start}.priority-scroll{max-height:240px}.empty-state{padding:18px 12px}}
+/* V7 — polished priority layout and disclosure control */
+.priority-scroll{width:100%;min-width:0;scrollbar-gutter:auto;padding-right:0}
+.priority-scroll.has-items{padding-right:2px}
+.empty-state{width:100%;margin:0;box-sizing:border-box}
+.priority-panel .section-heading{width:100%}
+.catalog-disclosure>summary{padding-right:19px}
+.disclosure-chevron{display:block;width:10px;height:10px;flex:0 0 10px;font-size:0;line-height:0;border-right:2px solid #b9c9dc;border-bottom:2px solid #b9c9dc;transform:rotate(45deg);transition:transform .2s ease,border-color .2s ease;margin-right:5px;margin-top:-5px;background:transparent;border-radius:0}
+.catalog-disclosure[open] .disclosure-chevron{transform:rotate(225deg);margin-top:5px}
+.catalog-disclosure>summary:hover .disclosure-chevron{border-color:#eaf4ff}
+.catalog-disclosure>summary:focus-visible{outline:2px solid #82dfb0;outline-offset:-3px}
+
+/* V8: Tooltips live outside clipped accordions, with viewport-aware placement. */
+.help::after,.help:hover::after,.help:focus::after{display:none!important}
+.global-help-tooltip{position:fixed;z-index:10000;pointer-events:none;max-width:min(330px,calc(100vw - 24px));background:#0b1320;color:#edf5ff;border:1px solid #6984a5;box-shadow:0 12px 25px #0009;border-radius:9px;padding:11px 13px;text-align:left;white-space:normal;font:normal 12px/1.5 system-ui,sans-serif;overflow-wrap:break-word}
+.global-help-tooltip[hidden]{display:none}
+
+/* V9: Report disclosure must look and behave like an obvious expandable control. */
+.changes-disclosure{border:1px solid #455974;border-radius:12px;background:#1b293d;overflow:visible;margin-top:18px;transition:border-color .15s,background .15s}
+.changes-disclosure:hover{border-color:#7a9bc1;background:#23344b}
+.changes-disclosure[open]{border-color:#607d9f;background:#1c2a3e}
+.changes-disclosure>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;list-style:none;padding:15px 17px;min-height:54px;color:#edf5ff;font-size:14px;font-weight:750;user-select:none;border-radius:12px}
+.changes-disclosure>summary::-webkit-details-marker{display:none}
+.changes-disclosure>summary:focus-visible{outline:2px solid #82dfb0;outline-offset:2px}
+.changes-summary-main{display:inline-flex;align-items:center;gap:10px;min-width:0;flex-wrap:wrap}
+.changes-summary-icon{display:grid;place-items:center;background:#314661;border-radius:7px;color:#c5d9ef;font-size:19px;width:29px;height:29px;flex-shrink:0}
+.changes-summary-label{line-height:1.4}
+.changes-summary-chevron{display:block;width:10px;height:10px;flex:0 0 10px;border-right:2px solid #c3d6ea;border-bottom:2px solid #c3d6ea;transform:rotate(45deg);transition:transform .18s;margin-right:5px;margin-top:-5px}
+.changes-disclosure[open] .changes-summary-chevron{transform:rotate(225deg);margin-top:5px}
+.changes-disclosure[open]>summary{border-radius:12px 12px 0 0;border-bottom:1px solid #455974}
+.changes-disclosure-content{padding:4px 17px 17px}
+.changes-disclosure #changes{margin-top:11px}
+/* Website enhancements */
+html{scroll-behavior:smooth} body{min-height:100vh} main{width:100%}
+.skip-link{position:absolute;left:14px;top:-60px;z-index:999;background:#82dfb0;color:#0c281a;padding:10px;border-radius:8px}.skip-link:focus{top:12px}
+.footer-brand{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:9px}.footer-brand strong{color:#e1edfc}.footer-links{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px}footer{border-top:1px solid #34435a;padding:19px 3px 30px}
+@media(max-width:680px){.catalog-results{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}.priority-item{flex-wrap:wrap}.set-name{max-width:none;min-width:100px}}
+
+/* Scryfall official set symbols — shared between catalog and priority list */
+.set-symbol{width:28px;height:28px;min-width:28px;flex:0 0 28px;display:grid;place-items:center;overflow:hidden;color:#d9e6f6}
+.set-symbol img{display:block;width:28px;height:28px;object-fit:contain;filter:brightness(0) invert(1);opacity:.95}
+.set-symbol .set-symbol-fallback{width:28px;height:28px;display:grid;place-items:center;font:700 23px/1 Georgia,serif;color:#9fb4cd}
+/* Icons are silhouette-style monochrome SVGs: adapt their contrast to the surrounding theme. */
+html[data-theme="light"] .set-symbol img{filter:brightness(0)}
+html[data-theme="light"] .set-symbol .set-symbol-fallback{color:#35455c}
+.catalog-card .card-info{min-width:0;flex:1}
+.catalog-card .select-set{width:23px;height:23px;min-width:23px;accent-color:#82dfb0;cursor:pointer;margin:0 5px 0 2px}
+.catalog-card .select-set:disabled{cursor:not-allowed}
+.priority-item .set-symbol{margin-right:2px}
+@media(max-width:560px){.set-symbol,.set-symbol img,.set-symbol .set-symbol-fallback{width:28px;height:28px}.priority-item .set-name{flex-basis:90px}.catalog-card{gap:7px}}
+</style>
+</head>
+<body><a class="skip-link" href="#priority">Pular para o conversor / Skip to converter</a><main>
+<div class="topbar"><div class="eyebrow" data-i18n="eyebrow">Magic: The Gathering · Conversor online</div><div class="lang-controls" role="group" aria-label="Language / Idioma"><button type="button" id="langPT" class="active" aria-pressed="true">PT</button><button type="button" id="langEN" aria-pressed="false">EN</button></div></div>
+<h1 data-i18n="title">MTG Print Conversor</h1>
+<p data-i18n="intro">Escolha suas coleções favoritas por prioridade. O conversor procura cada carta na primeira coleção disponível; apenas as que não forem encontradas passam para a próxima. Cartas sem impressão nas coleções escolhidas permanecem como estavam.</p>
+<section class="panel priority-panel" id="priority"><div class="section-heading"><div><div class="with-help"><h2 data-i18n="priorityTitle">1. Prioridade de coleções</h2><span class="help" tabindex="0" role="note" data-tip-key="priorityTip" aria-label="Informações sobre prioridades">ⓘ</span></div><p class="sub" data-i18n="priorityDesc">A primeira coleção tem preferência. Use as setas para reordenar a busca.</p></div><span class="selected-counter" id="selectedCount">0 coleções</span></div>
+<div class="priority-scroll" id="priorityScroll"><ol class="priority-list" id="priorityList"></ol><div class="empty-state" id="emptyState"><strong data-i18n="emptyTitle">Você não selecionou nenhuma coleção.</strong><span data-i18n="emptyDesc">Selecione uma coleção abaixo para definir suas prioridades.</span></div></div>
+<div class="priority-footer"><details class="catalog-disclosure" id="catalogDisclosure"><summary><span class="disclosure-icon">＋</span><span class="disclosure-heading"><strong class="with-help"><span data-i18n="addTitle">Adicionar coleções</span><span class="help" tabindex="0" role="note" data-tip-key="catalogTip" aria-label="Informações sobre catálogo">ⓘ</span></strong><small data-i18n="addDesc">Pesquise pelo nome ou sigla no catálogo do Scryfall</small></span><span class="disclosure-chevron">⌄</span></summary>
+<div class="disclosure-content"><div class="catalog-search"><label class="sr-only" for="catalogQuery" data-i18n="searchLabel">Pesquisar coleção</label><input id="catalogQuery" type="text" data-placeholder="searchPlaceholder" placeholder="Buscar coleção (ex.: Kamigawa, Turtles, NEO)" autocomplete="off"><label class="sr-only" for="catalogType" data-i18n="typeLabel">Tipo de coleção</label><select id="catalogType"><option value="all" data-i18n="typeAll">Todos os tipos</option><option value="expansion" data-i18n="typeExpansion">Expansões</option><option value="commander">Commander</option><option value="core" data-i18n="typeCore">Coleções básicas</option><option value="masters">Masters</option><option value="draft_innovation" data-i18n="typeDraft">Draft especiais</option><option value="promo" data-i18n="typePromo">Promocionais</option><option value="other" data-i18n="typeOther">Outros</option></select></div>
+<div class="catalog-info" id="catalogInfo" aria-live="polite" data-i18n="loadingCatalog">Carregando catálogo...</div><div class="catalog-results" id="catalogResults"></div>
+<div class="catalog-bottom"><form id="addForm" class="add-row"><label class="sr-only" for="newSet" data-i18n="manualLabel">Inserir sigla manualmente</label><input aria-label="Sigla da coleção" id="newSet" type="text" maxlength="8" data-placeholder="manualPlaceholder" placeholder="Sigla: NEO" autocomplete="off" spellcheck="false"><button type="submit" class="secondary" data-i18n="manualButton">Adicionar sigla</button></form><button type="button" class="secondary" id="refreshCatalog" data-i18n="refresh">Atualizar catálogo</button></div><p class="sub" id="setError" role="alert"></p></div></details>
+</div></section>
+<section class="panel"><div class="with-help"><h2 data-i18n="deckTitle">2. Sua decklist</h2><span class="help" tabindex="0" role="note" data-tip-key="deckTip" aria-label="Informações sobre decklist">ⓘ</span></div><div class="row"><div class="col"><label for="input" class="with-help"><span data-i18n="original">Original</span><span class="help" tabindex="0" role="note" data-tip-key="inputTip" aria-label="Informações sobre entrada">ⓘ</span></label><textarea id="input" spellcheck="false" placeholder="COMMANDER:
+1 Splinter, Radical Rat (TMC) 2
+
+MAINBOARD:
+1 Sol Ring (CMM) 396
+1 Arcane Signet (MOC) 298"></textarea></div><div class="col"><label for="output" class="with-help"><span data-i18n="result">Resultado</span><span class="help" tabindex="0" role="note" data-tip-key="outputTip" aria-label="Informações sobre resultado">ⓘ</span></label><textarea id="output" spellcheck="false" readonly data-placeholder="outputPlaceholder" placeholder="A lista convertida vai aparecer aqui..."></textarea></div></div>
+<div class="actions"><button id="convert" type="button" data-i18n="convert">Converter toda a lista</button><button id="copy" type="button" class="secondary" disabled data-i18n="copy">Copiar resultado</button><button id="save" type="button" class="secondary" disabled data-i18n="download">Baixar .txt</button></div>
+<div class="status" id="status" aria-live="polite" data-i18n="ready">Pronto para converter.</div><div class="stats" id="stats"></div>
+<details class="changes-disclosure"><summary><span class="changes-summary-main"><span class="changes-summary-icon" aria-hidden="true">▤</span><span class="changes-summary-label" data-i18n="changesTitle">Ver alterações carta por carta</span><span class="help" tabindex="0" role="note" data-tip-key="changesTip" aria-label="Informações sobre relatório">ⓘ</span></span><span class="changes-summary-chevron" aria-hidden="true"></span></summary><div class="changes-disclosure-content"><div id="changes" data-i18n="noConversion">Nenhuma conversão executada.</div></div></details></section>
+<footer><div class="footer-brand"><strong>MTG Print Conversor</strong><span data-i18n="footerLegal">Ferramenta independente. Não afiliada à Wizards of the Coast ou ao Scryfall.</span></div><span data-i18n="footer">Usa a API pública do Scryfall (internet necessária). A lista é processada no navegador; somente consultas sobre coleções e cartas são enviadas ao Scryfall. Resultados dependem dos dados do Scryfall.</span> <a href="https://scryfall.com/docs/api" target="_blank" rel="noopener">Scryfall API</a><div class="footer-links"><a href="https://github.com/" target="_blank" rel="noopener" data-i18n="githubLink">GitHub</a><span>·</span><span data-i18n="privacyNote">Sem contas e sem envio da decklist a um servidor próprio.</span></div></footer>
+</main><script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id);
+const delay=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+const norm=s=>s.normalize('NFKC').trim().replace(/\s+/g,' ').toLocaleLowerCase('en-US');
+
+let sets=[],busy=false,catalog=[],catalogLoading=false;
+let lang='pt';
+const tr={
+pt:{eyebrow:'Magic: The Gathering · Conversor online',title:'MTG Print Conversor',intro:'Escolha suas coleções favoritas por prioridade. O conversor procura cada carta na primeira coleção disponível; apenas as que não forem encontradas passam para a próxima. Cartas sem printing nessas coleções mantêm a versão original.',priorityTitle:'1. Prioridade de coleções',priorityDesc:'A primeira coleção tem preferência. Use as setas para reordenar a busca.',priorityTip:'A ordem define onde procurar primeiro. Se uma carta existir na primeira coleção, ela será escolhida sem consultar as próximas para aquela carta.',emptyTitle:'Você não selecionou nenhuma coleção.',emptyDesc:'Selecione uma coleção abaixo para definir suas prioridades.',addTitle:'Adicionar coleções',addDesc:'Pesquise pelo nome ou sigla no catálogo do Scryfall',catalogTip:'Abra este painel, pesquise qualquer coleção do Scryfall e marque a caixa de seleção. Você também pode digitar uma sigla manualmente. As coleções adicionadas entram no final da prioridade.',searchLabel:'Pesquisar coleção',searchPlaceholder:'Buscar coleção (ex.: Kamigawa, Turtles, NEO)',typeLabel:'Tipo de coleção',typeAll:'Todos os tipos',typeExpansion:'Expansões',typeCore:'Coleções básicas',typeDraft:'Draft especiais',typePromo:'Promocionais',typeOther:'Outros',loadingCatalog:'Carregando catálogo...',manualLabel:'Inserir sigla manualmente',manualPlaceholder:'Sigla: NEO',manualButton:'Adicionar sigla',refresh:'Atualizar catálogo',example:'Usar exemplo TMNT',deckTitle:'2. Sua decklist',deckTip:'Cole uma lista de Magic com quantidades e nomes de cartas. O conversor mantém as quantidades, os nomes e os cabeçalhos.',original:'Original',inputTip:'Cole aqui a lista exportada do Moxfield ou linhas como: 1 Sol Ring (CMM) 396. Também são aceitas linhas sem edição.',result:'Resultado',outputTip:'A versão convertida aparece aqui. A ferramenta só troca o código da coleção e o número de colecionador.',outputPlaceholder:'A lista convertida vai aparecer aqui...',convert:'Converter toda a lista',copy:'Copiar resultado',download:'Baixar .txt',ready:'Pronto para converter.',changesTitle:'Ver alterações carta por carta',changesTip:'Depois da conversão, mostra quais cartas mudaram, quantas foram encontradas em cada coleção e quais permaneceram com o printing original.',noConversion:'Nenhuma conversão executada.',footerLegal:'Ferramenta independente. Não afiliada à Wizards of the Coast ou ao Scryfall.',githubLink:'GitHub',privacyNote:'Sem contas e sem envio da decklist a um servidor próprio.',footer:'Usa a API pública do Scryfall (internet necessária). A lista é processada no navegador; somente consultas sobre coleções e cartas são enviadas ao Scryfall. Resultados dependem dos dados do Scryfall.',collection:'coleção',collections:'coleções',custom:'Coleção personalizada',up:'Subir',down:'Descer',remove:'Remover',found:n=>`${n} coleção(ões) encontrada(s) · todas disponíveis abaixo. Marque a caixa para adicionar à prioridade.`,already:'Já adicionada',add:'Adicionar',fetching:'Buscando coleções no Scryfall...',catalogFail:e=>`Não foi possível carregar o catálogo (${e}). Você ainda pode adicionar siglas manualmente e converter normalmente.`,badCode:'Use uma sigla de 2 a 8 letras ou números.',duplicate:'Essa coleção já está na lista.',needInput:'Cole uma decklist para começar.',needSets:'Adicione pelo menos uma coleção à lista de prioridades.',badInput:'Não encontrei linhas no formato “1 Nome da Carta”.',consulting:(s,i,n,p)=>`Consultando ${s} (${i}/${n})... ${p} carta(s) ainda sem correspondência.`,stats:['Cartas processadas','Versões encontradas','Linhas alteradas','Sem match'],noChanges:'Nenhuma alteração necessária.',perSet:'Correspondências por coleção',noEdition:'sem edição',complete:(m,n,order,p)=>`Concluído! ${m} de ${n} cartas encontradas na ordem ${order}. ${p} ficaram com a versão original.`,error:e=>`Erro: ${e} Verifique as siglas e sua conexão. Nenhum resultado parcial foi aplicado.`,copied:'Resultado copiado!',selected:'Resultado selecionado: pressione Ctrl+C para copiar.',setMissing:(s,h)=>`A coleção ${s} não foi encontrada no Scryfall (HTTP ${h}).`,tooMany:s=>`Busca de ${s} ultrapassou o limite de páginas.`,setFail:(s,h)=>`Não foi possível listar as cartas de ${s} (HTTP ${h}).`,unexpected:s=>`Resposta inesperada para ${s}.`},
+en:{eyebrow:'Magic: The Gathering · Online tool',title:'MTG Print Conversor',intro:'Choose your preferred sets in priority order. For each card, the converter selects the first set containing a matching printing. Cards not found in any selected set keep their original printing.',priorityTitle:'1. Set priorities',priorityDesc:'The first set has the highest priority. Use the arrows to reorder.',priorityTip:'Search follows this order. Once a card is found in a higher-priority set, lower-priority sets are skipped for that card.',emptyTitle:'You have not selected any sets.',emptyDesc:'Select a set below to start building your priority list.',addTitle:'Add sets',addDesc:'Search the Scryfall catalog by set name or code',catalogTip:'Expand this panel, search any Scryfall set, and check its box. You can also enter set codes manually. New sets go to the end of your priority list.',searchLabel:'Search sets',searchPlaceholder:'Search sets (e.g. Kamigawa, Turtles, NEO)',typeLabel:'Set type',typeAll:'All types',typeExpansion:'Expansions',typeCore:'Core sets',typeDraft:'Special draft sets',typePromo:'Promotional',typeOther:'Other',loadingCatalog:'Loading catalog...',manualLabel:'Enter a set code',manualPlaceholder:'Code: NEO',manualButton:'Add code',refresh:'Refresh catalog',example:'Load TMNT example',deckTitle:'2. Your decklist',deckTip:'Paste a Magic decklist with card quantities and names. The converter preserves quantities, card names, and section headings.',original:'Original',inputTip:'Paste a Moxfield export or lines like: 1 Sol Ring (CMM) 396. Lines without set codes also work.',result:'Result',outputTip:'Your converted list appears here. Only the set code and collector number are replaced.',outputPlaceholder:'Your converted list will appear here...',convert:'Convert decklist',copy:'Copy result',download:'Download .txt',ready:'Ready to convert.',changesTitle:'View card-by-card changes',changesTip:'After conversion, see which cards changed, how many matched each set, and which kept their original printings.',noConversion:'No conversion run yet.',footerLegal:'Independent project. Not affiliated with Wizards of the Coast or Scryfall.',githubLink:'GitHub',privacyNote:'No accounts or uploads of your decklist to our own server.',footer:'Uses the public Scryfall API (internet required). Your decklist is processed in your browser; only set and card queries are sent to Scryfall. Results depend on Scryfall data.',collection:'set',collections:'sets',custom:'Custom set',up:'Move up',down:'Move down',remove:'Remove',found:n=>`${n} set(s) found · all displayed below. Check its box to add to priorities.`,already:'Already added',add:'Add',fetching:'Fetching sets from Scryfall...',catalogFail:e=>`Could not load the catalog (${e}). You can still add codes manually and convert.`,badCode:'Use a code containing 2 to 8 letters or digits.',duplicate:'This set is already in the list.',needInput:'Paste a decklist to get started.',needSets:'Add at least one set to your priority list.',badInput:'No card lines found in the format “1 Card Name”.',consulting:(s,i,n,p)=>`Searching ${s} (${i}/${n})... ${p} unmatched card(s) remaining.`,stats:['Cards processed','Printings matched','Lines changed','Unmatched'],noChanges:'No changes needed.',perSet:'Matches by set',noEdition:'no edition',complete:(m,n,order,p)=>`Done! ${m} of ${n} cards matched in priority order ${order}. ${p} kept their original printing.`,error:e=>`Error: ${e} Check set codes and your connection. No partial result was applied.`,copied:'Result copied!',selected:'Result selected: press Ctrl+C to copy.',setMissing:(s,h)=>`Set ${s} was not found on Scryfall (HTTP ${h}).`,tooMany:s=>`Search for ${s} exceeded the page limit.`,setFail:(s,h)=>`Could not retrieve cards from ${s} (HTTP ${h}).`,unexpected:s=>`Unexpected response for ${s}.`}};
+const t=(key,...args)=>typeof tr[lang][key]==='function'?tr[lang][key](...args):tr[lang][key];
+function setLanguage(next){lang=next;document.documentElement.lang=next==='pt'?'pt-BR':'en';document.querySelectorAll('[data-i18n]').forEach(el=>{el.textContent=t(el.dataset.i18n)});document.querySelectorAll('[data-placeholder]').forEach(el=>{el.placeholder=t(el.dataset.placeholder)});document.querySelectorAll('[data-tip-key]').forEach(el=>{el.dataset.tip=t(el.dataset.tipKey);el.setAttribute('aria-label',t(el.dataset.tipKey))});for(const l of ['PT','EN']){const b=$('lang'+l);b.classList.toggle('active',l.toLowerCase()===next);b.setAttribute('aria-pressed',String(l.toLowerCase()===next))}render();if(!catalogLoading&&catalog.length)renderCatalog();else if(!catalogLoading)$('catalogInfo').textContent=t('loadingCatalog');if(!$('output').value)$('changes').textContent=t('noConversion');if(!$('output').value)$('status').textContent=t('ready');try{localStorage.setItem('mtg-printing-language',next)}catch{}}
+$('langPT').onclick=()=>setLanguage('pt');$('langEN').onclick=()=>setLanguage('en');
+const cache=new Map();
+const prettyName={TMT:'Teenage Mutant Ninja Turtles',TMC:'TMNT Commander',PZA:'Promo / especial'};
+const setMsg=(message,kind='')=>{$('status').className='status '+kind;$('status').textContent=message;};
+
+// Official Scryfall SVG URI is already part of the /sets response. Never fetch per-set metadata.
+function getSetMetadata(code){return catalog.find(entry=>entry.code.toUpperCase()===code.toUpperCase());}
+function officialSymbolUri(entry){
+ if(!entry||typeof entry.icon_svg_uri!=='string')return null;
+ try{const url=new URL(entry.icon_svg_uri);return url.protocol==='https:'&&url.hostname==='svgs.scryfall.io' ? url.href : null;}
+ catch{return null;}
+}
+function makeSetSymbol(entry){
+ const holder=document.createElement('span');holder.className='set-symbol';holder.setAttribute('aria-hidden','true');
+ const fallback=document.createElement('span');fallback.className='set-symbol-fallback';fallback.textContent='◇';
+ const url=officialSymbolUri(entry);
+ if(url){const img=document.createElement('img');img.src=url;img.alt='';img.loading='lazy';img.decoding='async';img.onerror=()=>{img.remove();holder.append(fallback)};holder.append(img);}
+ else holder.append(fallback);
+ return holder;
+}
+
+function render(){const list=$('priorityList');list.replaceChildren();sets.forEach((set,i)=>{
+ const li=document.createElement('li');li.className='priority-item';
+ const rank=document.createElement('span');rank.className='rank';rank.textContent=(i+1)+'.';
+ const code=document.createElement('span');code.className='set-code';code.textContent=set;
+ const name=document.createElement('span');name.className='set-name';name.textContent=getSetMetadata(set)?.name||prettyName[set]||t('custom');
+ const group=document.createElement('div');group.className='move-group';
+ const up=document.createElement('button');up.type='button';up.className='secondary icon-btn';up.textContent='↑';up.title=t('up')+' '+set;up.setAttribute('aria-label',t('up')+' '+set);up.disabled=busy||i===0;up.onclick=()=>{[sets[i-1],sets[i]]=[sets[i],sets[i-1]];render();};
+ const down=document.createElement('button');down.type='button';down.className='secondary icon-btn';down.textContent='↓';down.title=t('down')+' '+set;down.setAttribute('aria-label',t('down')+' '+set);down.disabled=busy||i===sets.length-1;down.onclick=()=>{[sets[i],sets[i+1]]=[sets[i+1],sets[i]];render();};
+ const remove=document.createElement('button');remove.type='button';remove.className='danger icon-btn';remove.textContent='×';remove.title=t('remove')+' '+set;remove.setAttribute('aria-label',t('remove')+' '+set);remove.disabled=busy;remove.onclick=()=>{sets.splice(i,1);render();};
+ group.append(up,down,remove);li.append(rank,makeSetSymbol(getSetMetadata(set)),code,name,group);list.append(li);
+ });$('priorityScroll').classList.toggle('has-items',sets.length>0);$('emptyState').hidden=sets.length>0;$('emptyState').style.display=sets.length?'none':'block';$('selectedCount').textContent=sets.length+' '+t(sets.length===1?'collection':'collections');renderCatalog();$('newSet').disabled=busy;$('addForm').querySelector('[type=submit]').disabled=busy;}
+$('addForm').onsubmit=event=>{event.preventDefault();const val=$('newSet').value.trim().toUpperCase();if(!/^[A-Z0-9]{2,8}$/.test(val)){$('setError').textContent=t('badCode');return;}if(sets.includes(val)){$('setError').textContent=t('duplicate');return;}sets.push(val);$('newSet').value='';$('setError').textContent='';render();};
+
+function renderCatalog(){
+ const q=norm($('catalogQuery').value);const type=$('catalogType').value;const container=$('catalogResults');container.replaceChildren();
+ if(!catalog.length)return;
+ const matches=catalog.filter(s=>(type==='all'||(type==='other'?!['expansion','commander','core','masters','draft_innovation','promo'].includes(s.set_type):s.set_type===type))&&(!q||norm(s.name).includes(q)||norm(s.code).includes(q)||norm(s.block||'').includes(q)));
+ $('catalogInfo').textContent=t('found',matches.length);
+ const fragment=document.createDocumentFragment();
+ for(const entry of matches){
+  const row=document.createElement('div');row.className='catalog-card';
+  const info=document.createElement('div');info.className='card-info';const n=document.createElement('div');n.className='card-name';n.textContent=entry.name; n.title=entry.name;
+  const meta=document.createElement('div');meta.className='card-meta';meta.textContent=`${entry.code.toUpperCase()} · ${entry.set_type.replaceAll('_',' ')}${entry.released_at?' · '+entry.released_at.slice(0,4):''}`;
+  info.append(n,meta);
+  const selected=sets.includes(entry.code.toUpperCase());
+  const checkbox=document.createElement('input');checkbox.type='checkbox';checkbox.className='select-set';checkbox.checked=selected;checkbox.disabled=busy;
+  checkbox.title=(selected?t('remove'):t('add'))+' '+entry.name;
+  checkbox.setAttribute('aria-label',(selected?t('remove'):t('add'))+' '+entry.name);
+  checkbox.addEventListener('change',()=>{
+   const code=entry.code.toUpperCase();
+   if(checkbox.checked&&!sets.includes(code))sets.push(code);
+   else if(!checkbox.checked)sets=sets.filter(x=>x!==code);
+   $('setError').textContent='';render();
+  });
+  row.append(makeSetSymbol(entry),info,checkbox);fragment.append(row);
+ }
+ container.append(fragment);
+}
+async function loadCatalog(force=false){
+ if(catalogLoading)return;catalogLoading=true;$('refreshCatalog').disabled=true;$('catalogInfo').textContent=t('fetching');
+ try{
+  const resp=await fetch('https://api.scryfall.com/sets'+(force?'?v='+Date.now():''),{headers:{Accept:'application/json'}});
+  if(!resp.ok)throw Error('HTTP '+resp.status);
+  const json=await resp.json();if(!Array.isArray(json.data))throw Error('dados inesperados');
+  catalog=json.data.filter(x=>x&&x.code&&x.name).sort((a,b)=>(b.released_at||'').localeCompare(a.released_at||'')||a.name.localeCompare(b.name,'pt-BR'));
+  render();
+ }catch(err){$('catalogInfo').textContent=t('catalogFail',err.message);}
+ finally{catalogLoading=false;$('refreshCatalog').disabled=false;}
+}
+$('catalogQuery').addEventListener('input',renderCatalog);$('catalogType').addEventListener('change',renderCatalog);$('refreshCatalog').onclick=()=>loadCatalog(true);
+
+function parse(line){
+ const m=line.match(/^(\s*\d+\s*x?\s+)(.+?)(\s*)$/i);if(!m)return null;
+ let content=m[2],name=content,originalSet=null,originalNumber=null,tail='';
+ // Preserve common Moxfield flags and arbitrary trailing marks after the collector number.
+ const p=content.match(/^(.*?)\s+\(([A-Za-z0-9]{2,8})\)\s+([^\s]+)(.*)$/);
+ if(p){name=p[1].trim();originalSet=p[2].toUpperCase();originalNumber=p[3];tail=p[4]||'';}
+ else {const t=content.match(/^(.*?)(\s+\*[FE]\*)$/i);if(t){name=t[1].trim();tail=t[2];}}
+ if(!name)return null;
+ return {prefix:m[1],name,originalSet,originalNumber,tail,spacing:m[3]};
+}
+function aliases(card){const names=[card.name];if(card.name.includes(' // '))names.push(card.name.replace(/ \/\/ /g,' / '));return names.map(norm);}
+async function getSet(code){
+ if(cache.has(code))return cache.get(code);
+ // Check that the set code actually exists, so errors are actionable.
+ let response=await fetch('https://api.scryfall.com/sets/'+encodeURIComponent(code.toLowerCase()),{headers:{Accept:'application/json'}});
+ if(!response.ok)throw new Error(t('setMissing',code,response.status));
+ await delay(110);
+ let page='https://api.scryfall.com/cards/search?q='+encodeURIComponent('e:'+code.toLowerCase())+'&unique=prints&order=set';
+ const idx=new Map();let pages=0;
+ while(page){if(++pages>150)throw new Error(t('tooMany',code));
+  response=await fetch(page,{headers:{Accept:'application/json'}});
+  if(!response.ok)throw new Error(t('setFail',code,response.status));
+  const json=await response.json();if(!Array.isArray(json.data))throw new Error(t('unexpected',code));
+  for(const card of json.data){if(!card.collector_number)continue;for(const key of aliases(card))if(!idx.has(key))idx.set(key,card);}
+  page=json.has_more?json.next_page:null;if(page)await delay(110);
+ }
+ cache.set(code,idx);return idx;
+}
+let lastOutput='';
+$('convert').onclick=async()=>{
+ if(busy)return;const input=$('input').value;
+ if(!input.trim()){setMsg(t('needInput'),'error');return;}
+ if(!sets.length){setMsg(t('needSets'),'error');return;}
+ const lines=input.split(/\r?\n/);const parsed=lines.map(parse);
+ if(!parsed.some(Boolean)){setMsg(t('badInput'),'error');return;}
+ busy=true;$('convert').disabled=true;$('copy').disabled=true;$('save').disabled=true;render();$('stats').replaceChildren();$('changes').textContent='';
+ try{
+  const selected=[...sets];const results=lines.slice();const pending=new Set(parsed.flatMap((p,i)=>p?[i]:[]));
+  const edits=[],counts=new Map(selected.map(s=>[s,0]));let matched=0;
+  for(let si=0;si<selected.length;si++){
+   const set=selected[si];setMsg(t('consulting',set,si+1,selected.length,pending.size));
+   const index=await getSet(set);
+   for(const i of [...pending]){
+    const p=parsed[i];let card=index.get(norm(p.name));
+    if(!card&&p.name.includes(' / ')&&!p.name.includes(' // '))card=index.get(norm(p.name.replace(/ \/ /g,' // ')));
+    if(!card)continue;
+    // Keep the deck's own spelling and names; only replace the edition and collector number.
+    const updated=`${p.prefix}${p.name} (${card.set.toUpperCase()}) ${card.collector_number}${p.tail}${p.spacing}`;
+    results[i]=updated;pending.delete(i);matched++;counts.set(set,counts.get(set)+1);
+    if(lines[i]!==updated)edits.push(`${p.name}: ${p.originalSet?`(${p.originalSet}) ${p.originalNumber}`:t('noEdition')} → (${card.set.toUpperCase()}) ${card.collector_number}`);
+   }
+   if(!pending.size)break;
+  }
+  const text=results.join('\n');lastOutput=text;$('output').value=text;
+  const total=parsed.filter(Boolean).length;
+  const stats=tr[lang].stats.map((label,i)=>[label,[total,matched,edits.length,pending.size][i]]);
+  for(const [label,n] of stats){const el=document.createElement('div');el.className='stat';const b=document.createElement('b');b.textContent=n;el.append(b,document.createTextNode(label));$('stats').append(el);}
+  $('changes').textContent=(edits.length?edits.join('\n'):t('noChanges'))+'\n\n'+t('perSet')+': '+selected.map(s=>s+': '+counts.get(s)).join(' | ');
+  $('copy').disabled=false;$('save').disabled=false;
+  setMsg(t('complete',matched,total,selected.join(' → '),pending.size),'success');
+ }catch(err){setMsg(t('error',err.message),'error');}
+ finally{busy=false;$('convert').disabled=false;render();}
+};
+$('copy').onclick=async()=>{if(!lastOutput)return;try{await navigator.clipboard.writeText(lastOutput);setMsg(t('copied'),'success');}catch{$('output').select();setMsg(t('selected'));}};
+$('save').onclick=()=>{if(!lastOutput)return;const blob=new Blob([lastOutput],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='decklist_printings_priorizados.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);};
+try{const saved=localStorage.getItem('mtg-printing-language');if(saved==='en')lang='en'}catch{}setLanguage(lang);loadCatalog();
+})();
+</script>
+<script>
+/* V8: render a single tooltip in document.body so parent overflow cannot clip it. */
+(()=>{
+ const tip=document.createElement('div');
+ tip.className='global-help-tooltip';tip.id='globalHelpTooltip';tip.hidden=true;
+ tip.setAttribute('role','tooltip');document.body.appendChild(tip);
+ let active=null;
+ const gap=9,edge=12;
+ function position(){
+  if(!active||tip.hidden)return;
+  const r=active.getBoundingClientRect();
+  const w=tip.offsetWidth,h=tip.offsetHeight;
+  let left=Math.min(Math.max(edge,r.left),Math.max(edge,innerWidth-w-edge));
+  let top=r.bottom+gap;
+  if(top+h>innerHeight-edge && r.top-h-gap>=edge)top=r.top-h-gap;
+  else top=Math.min(top,Math.max(edge,innerHeight-h-edge));
+  tip.style.left=Math.round(left)+'px';tip.style.top=Math.round(top)+'px';
+ }
+ function show(el){
+  const content=el.dataset.tip;
+  if(!content)return;
+  active=el;tip.textContent=content;tip.hidden=false;el.setAttribute('aria-describedby',tip.id);
+  position();
+ }
+ function hide(){if(active)active.removeAttribute('aria-describedby');active=null;tip.hidden=true;}
+ document.querySelectorAll('.help').forEach(el=>{
+  el.addEventListener('mouseenter',()=>show(el));
+  el.addEventListener('mouseleave',()=>{if(active===el)hide()});
+  el.addEventListener('focus',()=>show(el));
+  el.addEventListener('blur',()=>{if(active===el)hide()});
+  el.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();active===el&&!tip.hidden?hide():show(el)});
+  el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();e.stopPropagation();active===el&&!tip.hidden?hide():show(el)}});
+ });
+ window.addEventListener('scroll',position,true);
+ window.addEventListener('resize',position);
+ document.addEventListener('keydown',e=>{if(e.key==='Escape')hide()});
+ document.addEventListener('pointerdown',e=>{if(active&&!e.target.closest('.help'))hide()});
+ new MutationObserver(()=>{if(active&&!tip.hidden){tip.textContent=active.dataset.tip||'';position()}}).observe(document.documentElement,{attributes:true,subtree:true,attributeFilter:['data-tip']});
+})();
+</script>
+</body></html>
